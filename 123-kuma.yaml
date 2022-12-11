@@ -12,8 +12,28 @@ spec:
   selector:
     app: uptime-kuma
   ports:
-  - name: uptime-kuma
-    port: 3001
+    - name: uptime-kuma
+      port: 3001
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: uptime-kuma
+#   labels:
+#     app: uptime-kuma
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: uptime-kuma
+#   template:
+#     metadata:
+#       labels:
+#         app: uptime-kuma
+#     spec:
+#       containers:
+#         - name: kuma
+#           image: kuma
 ---
 apiVersion: apps/v1
 kind: StatefulSet
